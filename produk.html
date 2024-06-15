@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile - Produk</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="index.html"><img src="logo.png" alt="Company Logo"></a>
+        </div>
+        <div class="header-right">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produk.html">Produk</a></li>
+                    <li><a href="tentang.html">Tentang Kami</a></li>
+                    <li><a href="kontak.html">Kontak Kami</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="content">
+        <div class="produk-grid">
+            <!-- Produk 1 -->
+            <div class="produk-item" onclick="zoomIn(this)">
+                <img src="produk1.jpg" alt="Produk 1">
+                <div class="detail-produk">
+                    <h3>Nama Produk 1</h3>
+                    <p>Deskripsi produk 1.</p>
+                    <p>Harga: $XX</p>
+                </div>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="produk-item" onclick="zoomIn(this)">
+                <img src="produk2.jpg" alt="Produk 2">
+                <div class="detail-produk">
+                    <h3>Nama Produk 2</h3>
+                    <p>Deskripsi produk 2.</p>
+                    <p>Harga: $XX</p>
+                </div>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="produk-item" onclick="zoomIn(this)">
+                <img src="produk3.jpg" alt="Produk 3">
+                <div class="detail-produk">
+                    <h3>Nama Produk 3</h3>
+                    <p>Deskripsi produk 3.</p>
+                    <p>Harga: $XX</p>
+                </div>
+            </div>
+
+            <!-- Produk 4 -->
+            <div class="produk-item" onclick="zoomIn(this)">
+                <img src="produk4.jpg" alt="Produk 4">
+                <div class="detail-produk">
+                    <h3>Nama Produk 4</h3>
+                    <p>Deskripsi produk 4.</p>
+                    <p>Harga: $XX</p>
+                </div>
+            </div>
+
+            <!-- Produk 5 -->
+            <div class="produk-item" onclick="zoomIn(this)">
+                <img src="produk5.jpg" alt="Produk 5">
+                <div class="detail-produk">
+                    <h3>Nama Produk 5</h3>
+                    <p>Deskripsi produk 5.</p>
+                    <p>Harga: $XX</p>
+                </div>
+            </div>
+
+            <!-- Produk 6 -->
+            <div class="produk-item" onclick="zoomIn(this)">
+                <img src="produk6.jpg" alt="Produk 6">
+                <div class="detail-produk">
+                    <h3>Nama Produk 6</h3>
+                    <p>Deskripsi produk 6.</p>
+                    <p>Harga: $XX</p>
+                </div>
+            </div>
+
+            <!-- Produk 7 -->
+            <div class="produk-item" onclick="zoomIn(this)">
+                <img src="produk7.jpg" alt="Produk 7">
+                <div class="detail-produk">
+                    <h3>Nama Produk 7</h3>
+                    <p>Deskripsi produk 7.</p>
+                    <p>Harga: $XX</p>
+                </div>
+            </div>
+
+            <!-- Produk 8 -->
+            <div class="produk-item" onclick="zoomIn(this)">
+                <img src="produk8.jpg" alt="Produk 8">
+                <div class="detail-produk">
+                    <h3>Nama Produk 8</h3>
+                    <p>Deskripsi produk 8.</p>
+                    <p>Harga: $XX</p>
+                </div>
+            </div>
+
+            <!-- Produk 9 -->
+            <div class="produk-item" onclick="zoomIn(this)">
+                <img src="produk9.jpg" alt="Produk 9">
+                <div class="detail-produk">
+                    <h3>Nama Produk 9</h3>
+                    <p>Deskripsi produk 9.</p>
+                    <p>Harga: $XX</p>
+                </div>
+            </div>
+        </div>
+        <div id="zoomed-product" class="zoomed-product-container" onclick="zoomOut()">
+            <!-- Detail produk diperbesar akan ditampilkan di sini -->
+        </div>
+    </section>
+    <footer>
+        <div class="contact-info">
+            <div class="contact-details">
+                <p>Alamat: Jl. Raya Kresek-Balaraja, Kab. Tangerang</p>
+                <p>Telepon: (021) 456-7890</p>
+                <p>Email: info@pedrotoys.com</p>
+                <p>Media Sosial: 
+                    <a href="https://facebook.com/company">Pedro Toys</a>, 
+                    <a href="https://twitter.com/company">@pedroT</a>, 
+                    <a href="https://instagram.com/company">@toys_pedro</a>
+                </p>
+            </div>
+            <div id="map"></div> <!-- Div untuk menampilkan peta Google Maps -->
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        function initMap() {
+            var companyLocation = {lat: -7.797068, lng: 110.370529}; // Ganti dengan koordinat lokasi perusahaan Anda
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: companyLocation
+            });
+            var marker = new google.maps.Marker({
+                position: companyLocation,
+                map: map,
+                title: 'Lokasi Perusahaan'
+            });
+        }
+
+        function zoomIn(element) {
+            var zoomedProduct = document.getElementById('zoomed-product');
+            var detailProduk = element.querySelector('.detail-produk').cloneNode(true);
+            var imgSrc = element.querySelector('img').src;
+            zoomedProduct.innerHTML = '<img src="' + imgSrc + '" alt="Zoomed Product">' + detailProduk.outerHTML;
+            zoomedProduct.classList.add('active');
+        }
+
+        function zoomOut() {
+            var zoomedProduct = document.getElementById('zoomed-product');
+            zoomedProduct.innerHTML = '';
+            zoomedProduct.classList.remove('active');
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>

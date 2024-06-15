@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile - Tentang Kami</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="index.html"><img src="logo.png" alt="Company Logo"></a>
+        </div>
+        <div class="header-right">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produk.html">Produk</a></li>
+                    <li><a href="tentang.html">Tentang Kami</a></li>
+                    <li><a href="kontak.html">Kontak Kami</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="content">
+        <div class="kontak-kami">
+            <div class="contact-form">
+                <h2>Tentang Kami</h2>
+                <img src="foto_perusahaan.jpg" alt="Foto Perusahaan" class="company-photo">
+                <p>Perusahaan kami didirikan pada tahun XXXX dan telah berkomitmen untuk memberikan layanan terbaik kepada pelanggan. Kami bangga dengan dedikasi kami terhadap kualitas dan kepuasan pelanggan. Tim kami terdiri dari para profesional yang berpengalaman di industri ini dan selalu siap untuk membantu Anda.</p>
+
+                <h3>Visi</h3>
+                <p>Menjadi perusahaan terdepan dalam inovasi dan kualitas, memberikan solusi terbaik bagi pelanggan kami.</p>
+
+                <h3>Misi</h3>
+                <ul>
+                    <li>Menyediakan produk berkualitas tinggi yang memenuhi kebutuhan pelanggan.</li>
+                    <li>Memberikan layanan pelanggan yang luar biasa.</li>
+                    <li>Mendorong inovasi dan pengembangan berkelanjutan.</li>
+                    <li>Membangun hubungan jangka panjang dengan mitra dan pelanggan kami.</li>
+                </ul>
+
+                <h3>Moto Perusahaan</h3>
+                <p>"Kualitas dan Inovasi untuk Masa Depan."</p>
+
+                <h3>Struktur Organisasi</h3>
+                <img src="struktur_organisasi.jpg" alt="Struktur Organisasi" class="organization-chart">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="contact-info">
+            <div class="contact-details">
+                <p>Alamat: Jl. Raya Kresek-Balaraja, Kab. Tangerang</p>
+                <p>Telepon: (021) 456-7890</p>
+                <p>Email: info@pedrotoys.com</p>
+                <p>Media Sosial: 
+                    <a href="https://facebook.com/company">Pedro Toys</a>, 
+                    <a href="https://twitter.com/company">@pedroT</a>, 
+                    <a href="https://instagram.com/company">@toys_pedro</a>
+                </p>
+            </div>
+            <div id="map"></div> <!-- Div untuk menampilkan peta Google Maps -->
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        function initMap() {
+            var companyLocation = {lat: -7.797068, lng: 110.370529}; // Ganti dengan koordinat lokasi perusahaan Anda
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: companyLocation
+            });
+            var marker = new google.maps.Marker({
+                position: companyLocation,
+                map: map,
+                title: 'Lokasi Perusahaan'
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>

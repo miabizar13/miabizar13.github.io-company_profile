@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="index.html"><img src="logo.png" alt="Company Logo"></a>
+        </div>
+        <div class="header-right">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produk.html">Produk</a></li>
+                    <li><a href="tentang.html">Tentang Kami</a></li>
+                    <li><a href="kontak.html">Kontak Kami</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="content">
+        <div class="carousel">
+            <div class="slide">
+                <img src="gambar1.jpg" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="gambar2.jpg" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="gambar3.jpg" alt="Slide 3">
+            </div>
+            <!-- Tambahkan gambar slide selanjutnya di sini -->
+        </div>
+    </section>
+    <div class="company-info">
+        <h2>Pedro Toy Store</h2>
+        <p>Selamat datang di Pedro Toy Store, tempat di mana imajinasi bertemu dengan kenyataan!
+            <br>Kami adalah perusahaan mainan terkemuka yang berdedikasi untuk membawa kebahagiaan dan pembelajaran melalui produk-produk berkualitas tinggi yang dirancang untuk anak-anak dari segala usia.</p>
+    </div>
+    <footer>
+        <div class="contact-info">
+            <div class="contact-details">
+                <p>Alamat: Jl. Raya Kresek-Balaraja, Kab. Tangerang</p>
+                <p>Telepon: (021) 456-7890</p>
+                <p>Email: info@pedrotoys.com</p>
+                <p>Media Sosial: 
+                    <a href="https://facebook.com/company">Pedro Toys</a>, 
+                    <a href="https://twitter.com/company">@pedroT</a>, 
+                    <a href="https://instagram.com/company">@toys_pedro</a>
+                </p>
+            </div>
+            <div id="map"></div> <!-- Div untuk menampilkan peta Google Maps -->
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        function initMap() {
+            var companyLocation = {lat: -7.797068, lng: 110.370529}; // Ganti dengan koordinat lokasi perusahaan Anda
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: companyLocation
+            });
+            var marker = new google.maps.Marker({
+                position: companyLocation,
+                map: map,
+                title: 'Lokasi Perusahaan'
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
